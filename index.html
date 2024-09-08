@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cvičné úlohy</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+        }
+
+        h2 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .task-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .task-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        .task-title {
+            padding: 10px;
+        }
+
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
+
+        .input-section input {
+        width: 100%; /* Šířka input pole na 100% šířky kontejneru */
+        padding: 10px; /* Vnitřní odsazení */
+        border: 2px solid #ccc; /* Šířka a barva rámečku */
+        border-radius: 4px; /* Zaoblení rohů rámečku */
+        box-sizing: border-box; /* Zajišťuje, že padding a border jsou zahrnuty v šířce elementu */
+        }
+    
+        .output-section {
+            margin-bottom: 20px;
+        }
+
+        #output-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 50px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Levá část - seznam úloh -->
+        <div class="sidebar">
+            <h2>Úlohy</h2>
+            <div class="task-item" onclick="loadTask('sort_num')">Seřadit čísla</div>
+            <div class="task-item" onclick="loadTask('pivko')">Pivko?</div> <!-- Nová úloha -->
+        </div>
+
+        <!-- Pravá část - detail úlohy -->
+        <div class="main-content">
+            <div id="task-container">
+                <div class="task-title">Tato webová aplikace slouží k procvičování programovaní a k prezentaci vytvořených úloh.</div>
+                <div class="task-title">Vyberte úlohu vlevo</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hlavní JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
